@@ -1,0 +1,11 @@
+xscale = 0;
+yscale = 0;
+heal = false;
+color = c_white;
+critical = false;
+heal_number = 0;
+damage = 1;
+alpha = 1;
+alpha_delay = 0;
+my_base_damage = global.base_damage;
+dad = noone;

@@ -1,0 +1,1 @@
+shockwave_render(ppfx_id, shockwave_id, [__obj_ppf_shockwave], view_camera[0]);

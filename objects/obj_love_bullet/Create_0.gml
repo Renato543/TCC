@@ -1,0 +1,10 @@
+spd = 0;
+damage = 1;
+critical = false;
+piercing_shot = false;
+out_cam = false;
+xscale = 2;
+yscale = 2;
+dad = noone;
+push_str = 0;
+light_scale = 1 + random_range(.1, .2);
