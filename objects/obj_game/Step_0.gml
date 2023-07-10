@@ -1,5 +1,41 @@
+global.death = true;
+
+
 if(global.death) {
+	
+	var touch = mouse_check_button(mb_left);
 	damage_alert_alp = lerp(damage_alert_alp, 0, .1);
+	
+	feather_vspeed += feather_gravity;
+	
+	
+	
+	feather_vspeed = clamp(feather_vspeed, -.4, .3);
+	
+	if(touch) { 
+		feather_accel -= .0001;	
+	}
+	else { 
+		feather_accel = 0;	
+	}
+	feather_accel = clamp(feather_accel, -.05, 0);
+	feather_vspeed += feather_accel;
+	show_debug_message(feather_angle_str);
+	if(feather_vspeed >= 0) { 
+		
+	}
+	else { 
+	
+	}
+	
+	feather_rad += (1000/60) * feather_angle_str;
+	
+	
+	feather_angle_str = feather_vspeed/.3;
+	feather_angle_str = clamp(feather_angle_str, -.6, 2);
+	
+	feather_y += feather_vspeed + abs(sin(feather_rad * .001)) * -.05;
+	
 	exit;
 }
 

@@ -87,12 +87,13 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Breathe","folderPath":"folders/Sprites/GUI/Breathe.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.4.0.84",
+    "IDEVersion": "2023.6.0.89",
   },
   "resources": [
     {"id":{"name":"__spr_ppf_debug_icon","path":"sprites/__spr_ppf_debug_icon/__spr_ppf_debug_icon.yy",},},
@@ -221,6 +222,7 @@
     {"id":{"name":"obj_friends","path":"objects/obj_friends/obj_friends.yy",},},
     {"id":{"name":"spr_friend_attack","path":"sprites/spr_friend_attack/spr_friend_attack.yy",},},
     {"id":{"name":"__ppf_data","path":"scripts/__ppf_data/__ppf_data.yy",},},
+    {"id":{"name":"spr_feather","path":"sprites/spr_feather/spr_feather.yy",},},
     {"id":{"name":"__spr_ppf_shockwave_normal","path":"sprites/__spr_ppf_shockwave_normal/__spr_ppf_shockwave_normal.yy",},},
     {"id":{"name":"__ppf_sh_render_palette_swap","path":"shaders/__ppf_sh_render_palette_swap/__ppf_sh_render_palette_swap.yy",},},
     {"id":{"name":"__ppf_sh_render_final","path":"shaders/__ppf_sh_render_final/__ppf_sh_render_final.yy",},},

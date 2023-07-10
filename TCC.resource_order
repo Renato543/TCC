@@ -76,6 +76,7 @@
     {"name":"Player","order":1,"path":"folders/Sprites/Player.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Breathe","order":6,"path":"folders/Sprites/GUI/Breathe.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"damage_check","order":4,"path":"scripts/damage_check/damage_check.yy",},

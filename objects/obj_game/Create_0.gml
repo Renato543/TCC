@@ -16,6 +16,15 @@ global.stats = {
 	spd: 1
 }
 
+feather_y = display_get_gui_height()/2;
+feather_accel = 0;
+feather_vspeed = 0;
+feather_gravity = .0025;
+feather_angle_str = 1;
+feather_rad = 0;
+
+
+
 main_life_proportion = 1;
 main_xp_proportion = 0;
 global.death = false;

@@ -1,21 +1,39 @@
+if(global.death) {
+	if(!surface_exists(my_surf)) { 
+		my_surf = surface_create(view_wport[0], view_hport[0]);
+		surface_set_target(my_surf);
+		surface_reset_target();
+	}
+	else { 
+		draw_surface(my_surf, 0, 0);	
+		surface_set_target(my_surf);
+		draw_clear_alpha(0, 0);
+		surface_reset_target();
+	}
+
+	var dis_ww = display_get_gui_width();
+	var dis_hh = display_get_gui_height();
+	var angle = sin(feather_rad * .001) * 30;
+	var len_xx = lengthdir_x(20, 270 + angle);
+	var len_yy = lengthdir_y(20, 270 + angle);
 
 
-if(global.death) exit;
+	
+
+	if(surface_exists(my_surf)) {
+		surface_set_target(my_surf);
+		draw_sprite_ext(spr_feather, 0, dis_ww/2 + len_xx, feather_y + len_yy, 1, 1, angle/4, c_white, 1);
+		surface_reset_target();
+	}
+
+	exit;
+	
+}
 //draw_sprite_ext(spr_damage_alert, 0, 0, 0, 1, 1, 0, c_white, damage_alert_alp);
 
 if(show_mouse) draw_circle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 2, false);
 
-if(!surface_exists(my_surf)) { 
-	my_surf = surface_create(view_wport[0], view_hport[0]);
-	surface_set_target(my_surf);
-	surface_reset_target();
-}
-else { 
-	draw_surface(my_surf, 0, 0);	
-	surface_set_target(my_surf);
-	draw_clear_alpha(0, 0);
-	surface_reset_target();
-}
+
 
 
 var xx = 10 + sprite_get_width(spr_stats_portrait_healthy)/2;
@@ -56,13 +74,7 @@ if(portrait_light_alp > 0) {
 }
 
 
-if(surface_exists(my_surf)) {
-	surface_set_target(my_surf);
-	draw_set_config(global.font);
-	
-	draw_reset_config();
-	surface_reset_target();
-}
+
 
 
 draw_set_config(global.font,,, fa_left);
