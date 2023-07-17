@@ -16,12 +16,20 @@ global.stats = {
 	spd: 1
 }
 
+feather_start = false;
 feather_y = display_get_gui_height()/2;
 feather_accel = 0;
 feather_vspeed = 0;
-feather_gravity = .0025;
+feather_gravity = .0085;
 feather_angle_str = 1;
 feather_rad = 0;
+feather_text_alpha = 0;
+
+feather_goal_rad = 0;
+feather_goal_y = display_get_gui_height()/2;
+feather_goal_bright = 255;
+anxiety_level = 1;
+anxiety_shake = 2;
 
 
 
@@ -112,6 +120,7 @@ event_user(2);
 event_user(3);
 event_user(4);
 event_user(5);
+event_user(8);
 
 ww = camera_get_view_width(view_camera[0]);
 hh = camera_get_view_height(view_camera[0]);

@@ -1,11 +1,11 @@
 if(global.death) {
 	if(!surface_exists(my_surf)) { 
-		my_surf = surface_create(view_wport[0], view_hport[0]);
+		my_surf = surface_create(display_get_gui_width(), display_get_gui_height());
 		surface_set_target(my_surf);
 		surface_reset_target();
 	}
 	else { 
-		draw_surface(my_surf, 0, 0);	
+		draw_surface(my_surf, anxiety_level * irandom_range(-anxiety_shake, anxiety_shake), anxiety_level * irandom_range(-anxiety_shake, anxiety_shake));	
 		surface_set_target(my_surf);
 		draw_clear_alpha(0, 0);
 		surface_reset_target();
@@ -16,14 +16,41 @@ if(global.death) {
 	var angle = sin(feather_rad * .001) * 30;
 	var len_xx = lengthdir_x(20, 270 + angle);
 	var len_yy = lengthdir_y(20, 270 + angle);
-
+	
 
 	
 
 	if(surface_exists(my_surf)) {
-		surface_set_target(my_surf);
-		draw_sprite_ext(spr_feather, 0, dis_ww/2 + len_xx, feather_y + len_yy, 1, 1, angle/4, c_white, 1);
-		surface_reset_target();
+		//surface_set_target(my_surf);
+		draw_set_color(c_black);
+		draw_set_alpha(.8);
+		draw_rectangle(0, 0, dis_ww, dis_hh, false);
+		draw_set_alpha(1);
+		draw_set_color(c_white);
+		
+		var aspect_x = display_get_gui_width()/sprite_get_width(spr_anxiety_level);
+		var aspect_y = display_get_gui_height()/sprite_get_height(spr_anxiety_level);
+		draw_sprite_ext(spr_anxiety_level, 0, display_get_gui_width()/2 + (anxiety_level * irandom_range(-1.5, 1.5)), display_get_gui_height()/2 + (anxiety_level * irandom_range(-1.5, 1.5)), aspect_x, aspect_y, 0, c_white, anxiety_level);
+		
+		var goal_ww = sprite_get_width(spr_feather_goal);
+		var goal_hh = sprite_get_height(spr_feather_goal);
+		
+		if(feather_start) {
+		draw_set_alpha(.3);
+			draw_set_color(make_color_rgb(feather_goal_bright, feather_goal_bright, feather_goal_bright));
+			draw_rectangle(dis_ww/2 - goal_ww/2, feather_goal_y - goal_hh/2, dis_ww/2 + goal_ww/2 - 1, feather_goal_y + goal_hh/2 - 1, false);
+			draw_set_alpha(1);
+		
+			draw_sprite_ext(spr_feather_goal, 0, dis_ww/2, feather_goal_y, 1, 1, 0, make_color_rgb(feather_goal_bright, feather_goal_bright, feather_goal_bright), 1);
+		}
+		
+		draw_sprite_ext(spr_feather, 0, dis_ww/2 + len_xx + (anxiety_level * irandom_range(-1.5, 1.5)), feather_y + len_yy + (anxiety_level * irandom_range(-1.5, 1.5)), 1, 1, angle/4, c_white, 1);
+		
+		draw_set_config(global.font,, feather_text_alpha);
+		draw_text(display_get_gui_width()/2, display_get_gui_height() * .9, "apenas respire.");
+		draw_reset_config();
+		
+		//surface_reset_target();
 	}
 
 	exit;
