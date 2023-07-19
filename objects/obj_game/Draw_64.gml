@@ -23,31 +23,33 @@ if(global.death) {
 	if(surface_exists(my_surf)) {
 		//surface_set_target(my_surf);
 		draw_set_color(c_black);
-		draw_set_alpha(.8);
+		draw_set_alpha(.8 * breathe_scale);
 		draw_rectangle(0, 0, dis_ww, dis_hh, false);
 		draw_set_alpha(1);
 		draw_set_color(c_white);
 		
 		var aspect_x = display_get_gui_width()/sprite_get_width(spr_anxiety_level);
 		var aspect_y = display_get_gui_height()/sprite_get_height(spr_anxiety_level);
-		draw_sprite_ext(spr_anxiety_level, 0, display_get_gui_width()/2 + (anxiety_level * irandom_range(-1.5, 1.5)), display_get_gui_height()/2 + (anxiety_level * irandom_range(-1.5, 1.5)), aspect_x, aspect_y, 0, c_white, anxiety_level);
+		draw_sprite_ext(spr_anxiety_level, 0, display_get_gui_width()/2 + (anxiety_level * irandom_range(-1.5, 1.5)), display_get_gui_height()/2 + (anxiety_level * irandom_range(-1.5, 1.5)), aspect_x, aspect_y, 0, c_white, anxiety_level * breathe_scale);
 		
 		var goal_ww = sprite_get_width(spr_feather_goal);
 		var goal_hh = sprite_get_height(spr_feather_goal);
 		
 		if(feather_start) {
-		draw_set_alpha(.3);
-			draw_set_color(make_color_rgb(feather_goal_bright, feather_goal_bright, feather_goal_bright));
-			draw_rectangle(dis_ww/2 - goal_ww/2, feather_goal_y - goal_hh/2, dis_ww/2 + goal_ww/2 - 1, feather_goal_y + goal_hh/2 - 1, false);
-			draw_set_alpha(1);
+			draw_set_alpha(.3);
+			if(breathe_scale > .01) {
+				draw_set_color(make_color_rgb(feather_goal_bright, feather_goal_bright, feather_goal_bright));
+				draw_rectangle(dis_ww/2 - (goal_ww/2) * breathe_scale, feather_goal_y - (goal_hh/2) * breathe_scale, dis_ww/2 + (goal_ww/2 - 1) * breathe_scale, feather_goal_y + (goal_hh/2 - 1) * breathe_scale, false);
+				draw_set_alpha(1);
+			}
 		
-			draw_sprite_ext(spr_feather_goal, 0, dis_ww/2, feather_goal_y, 1, 1, 0, make_color_rgb(feather_goal_bright, feather_goal_bright, feather_goal_bright), 1);
+			draw_sprite_ext(spr_feather_goal, 0, dis_ww/2, feather_goal_y, breathe_scale, breathe_scale, 0, make_color_rgb(feather_goal_bright, feather_goal_bright, feather_goal_bright), 1);
 		}
 		
-		draw_sprite_ext(spr_feather, 0, dis_ww/2 + len_xx + (anxiety_level * irandom_range(-1.5, 1.5)), feather_y + len_yy + (anxiety_level * irandom_range(-1.5, 1.5)), 1, 1, angle/4, c_white, 1);
+		draw_sprite_ext(spr_feather, 0, dis_ww/2 + len_xx + (anxiety_level * irandom_range(-1.5, 1.5)), feather_y + len_yy + (anxiety_level * irandom_range(-1.5, 1.5)), breathe_scale, breathe_scale, angle/4, c_white, 1);
 		
 		draw_set_config(global.font,, feather_text_alpha);
-		draw_text(display_get_gui_width()/2, display_get_gui_height() * .9, "apenas respire.");
+		draw_text_transformed(display_get_gui_width()/2, display_get_gui_height() * .9, "apenas respire.", breathe_scale, breathe_scale, 0);
 		draw_reset_config();
 		
 		//surface_reset_target();

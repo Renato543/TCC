@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-super_horde = false;
+super_horde = true;
 
 
 enemy_spawner_count = 0;

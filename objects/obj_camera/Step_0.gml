@@ -1,6 +1,6 @@
 if(global.pause) exit;
 
-cam_scale = lerp(cam_scale, cam_scale_max, .1);
+cam_scale = lerp(cam_scale, cam_scale_max, cam_vel);
 
 var ww_final = initial_cam_ww * cam_scale;
 var hh_final = initial_cam_hh * cam_scale;
@@ -14,7 +14,12 @@ var y_destiny = obj_player.y;
 
 
 if(global.death) { 
+	cam_vel = .1;
 	cam_scale_max = .5;
+}
+else { 
+	cam_vel = .2;
+	cam_scale_max = 1;	
 }
 
 x = lerp(x, x_destiny, .1);

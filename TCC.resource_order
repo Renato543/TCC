@@ -176,6 +176,7 @@
     {"name":"create_damage_number","order":3,"path":"scripts/create_damage_number/create_damage_number.yy",},
     {"name":"spr_enemy2_death","order":3,"path":"sprites/spr_enemy2_death/spr_enemy2_death.yy",},
     {"name":"spr_stats_portrait_hurt","order":4,"path":"sprites/spr_stats_portrait_hurt/spr_stats_portrait_hurt.yy",},
+    {"name":"sh_brightness","order":1,"path":"shaders/sh_brightness/sh_brightness.yy",},
     {"name":"obj_candy","order":1,"path":"objects/obj_candy/obj_candy.yy",},
     {"name":"__ppf_sh_render_fxaa","order":9,"path":"shaders/__ppf_sh_render_fxaa/__ppf_sh_render_fxaa.yy",},
     {"name":"__ppf_render","order":6,"path":"scripts/__ppf_render/__ppf_render.yy",},

@@ -3,6 +3,9 @@ if(global.death) {
 	image_alpha = lerp(image_alpha, .4, .3);
 	exit;
 }
+else { 
+	image_alpha = lerp(image_alpha, 1, .3);	
+}
 
 if(global.levelling_up || global.pause) {
 	image_speed = 0;

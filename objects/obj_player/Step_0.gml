@@ -88,14 +88,50 @@ switch(state) {
 	break;
 	
 	case player_states.defeat:
+		player_shake = 1;
 		sprite_index = skins.defeat;
-		defeat_shake_str = approach(defeat_shake_str, 0, .1);
 		depth = -y - 400;
+		defeat_shake_str = approach(defeat_shake_str, 0, .1);
 		shake(defeat_shake_str, .1);
+		
+		if(global.revive_times <= 0) player_shake = 1 * defeat_shake_str;
 		if(defeat_shake_str <= 0) { 
-			obj_game.show_defeat = true;
-			transition(room);
+			if(global.revive_times <= 0) {
+				obj_game.show_defeat = true;
+				transition(room);
+			}
+			else { 
+				obj_game.breathe_time = true;		
+			}
+			
 		}
+	break;
+	
+	case player_states.reviving:
+		sprite_index = skins.defeat;
+		reviving_load += .01;
+		
+		player_shake = reviving_load * 2;
+		
+		if(reviving_load >= 1) { 
+			invencibility = 100;
+			global.death = false;
+			reviving_load = 0;
+			player_shake = 0;
+			state = player_states.idle;
+			shake(15, .1);
+			var med = instance_create_depth(x, y, depth, obj_meditation);
+			med.meditation_str = 15;
+			var med = instance_create_depth(x, y, depth, obj_meditation);
+			med.meditation_str = 10;
+			med.radius_vel = 6;
+			var med = instance_create_depth(x, y, depth, obj_meditation);
+			med.meditation_str = 5;
+			med.radius_vel = 4;
+			global.stats.life = global.stats.life_max/2;
+			part_particles_create(ps, x, y, pt, 100);
+		}
+		
 	break;
 }
 

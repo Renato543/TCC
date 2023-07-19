@@ -1,5 +1,6 @@
 cam_scale_max = 1;
 cam_scale = .5;
+cam_vel = .1;
 initial_cam_ww = camera_get_view_width(view_camera[0]);
 initial_cam_hh = camera_get_view_height(view_camera[0]);
 

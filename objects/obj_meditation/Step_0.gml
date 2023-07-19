@@ -4,7 +4,7 @@ if(global.levelling_up || global.pause || global.death) {
 
 
 
-radius += 10;
+radius += radius_vel;
 if(radius >= camera_get_view_width(view_camera[0])){ 
 	instance_destroy();	
 }

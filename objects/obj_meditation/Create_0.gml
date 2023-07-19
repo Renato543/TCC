@@ -1,6 +1,7 @@
 color_id = 1;
 color_count = 0;
 radius = 0;
+radius_vel = 10;
 level = 1;
 iid = items.meditation;
 electrocuted_time = .5;

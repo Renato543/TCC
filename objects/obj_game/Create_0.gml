@@ -11,25 +11,37 @@ global.chance_to_drop_xp = 75;
 //Player stats
 
 global.stats = { 
-	life: 100,
+	life: 10,
 	life_max: 100,
 	spd: 1
 }
 
-feather_start = false;
-feather_y = display_get_gui_height()/2;
-feather_accel = 0;
-feather_vspeed = 0;
-feather_gravity = .0085;
-feather_angle_str = 1;
-feather_rad = 0;
-feather_text_alpha = 0;
+global.revive_times = 1;
+function reset_breathe() {
+	breathe_time = false;
+	breathe_count = 0;
+	revive = false;
+	breathe_scale = 0;
+	feather_start = false;
+	feather_y = display_get_gui_height()/2;
+	feather_accel = 0;
+	feather_vspeed = 0;
+	feather_gravity = .0085;
+	feather_angle_str = 1;
+	feather_rad = 0;
+	feather_text_alpha = 0;
+	feather_stopped = false;
 
-feather_goal_rad = 0;
-feather_goal_y = display_get_gui_height()/2;
-feather_goal_bright = 255;
-anxiety_level = 1;
-anxiety_shake = 2;
+	feather_goal_rad = 0;
+	feather_goal_y = display_get_gui_height()/2;
+	feather_goal_bright = 255;
+	anxiety_level = 1;
+	anxiety_shake = 2;
+	anxiety_time_count = 0;
+
+}
+
+reset_breathe();
 
 
 

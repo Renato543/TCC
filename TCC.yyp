@@ -240,6 +240,7 @@
     {"id":{"name":"snd_hit","path":"sounds/snd_hit/snd_hit.yy",},},
     {"id":{"name":"spr_enemy2_death","path":"sprites/spr_enemy2_death/spr_enemy2_death.yy",},},
     {"id":{"name":"spr_stats_portrait_hurt","path":"sprites/spr_stats_portrait_hurt/spr_stats_portrait_hurt.yy",},},
+    {"id":{"name":"sh_brightness","path":"shaders/sh_brightness/sh_brightness.yy",},},
     {"id":{"name":"obj_candy","path":"objects/obj_candy/obj_candy.yy",},},
     {"id":{"name":"__ppf_sh_render_fxaa","path":"shaders/__ppf_sh_render_fxaa/__ppf_sh_render_fxaa.yy",},},
     {"id":{"name":"__ppf_render","path":"scripts/__ppf_render/__ppf_render.yy",},},

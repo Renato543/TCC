@@ -19,6 +19,7 @@ push_y = 0;
 final_velh = 0;
 final_velv = 0;
 gamepad_angle = 0;
+player_shake = 0;
 
 //Stats
 
@@ -41,8 +42,12 @@ defeat_shake_str = 10;
 enum player_states { 
 	idle,
 	walking,
-	defeat
+	defeat,
+	reviving
 }
+
+reviving_load = 0;
+u_brightness = shader_get_uniform(sh_brightness, "brightness");
 
 state = player_states.idle;
 
@@ -52,3 +57,4 @@ my_hug = noone;
 my_meditation = noone;
 my_friend = noone;
 
+event_user(2);
