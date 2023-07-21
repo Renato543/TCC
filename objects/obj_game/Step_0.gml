@@ -6,7 +6,26 @@ if(global.death) {
 		breathe_count++;
 		if(breathe_count >= 20) {
 			breathe_scale = lerp(breathe_scale, 1, .05);	
+			
+			heart_beat_count++;
+			
+			heart_beat_time = .5 + (1 - anxiety_level) * 2;
+			
+			if(heart_beat_count >= heart_beat_time * room_speed) {
+				heart_beat_count = 0;
+				audio_pitch_variation(snd_heart_beat, 50, false);
+			}
+			
 			if(feather_start) {
+				if(!audio_is_playing(wind_audio)) wind_audio = audio_pitch_variation(snd_wind, 1, true, 0, .7, .7);
+				else { 
+					show_debug_message(wind_volume);
+					audio_sound_gain(wind_audio, wind_volume * .5, 0);	
+					audio_sound_pitch(wind_audio, wind_volume * .8);	
+				}				
+				
+				
+				
 				feather_text_alpha = lerp(feather_text_alpha, 0, .1);
 				if(instance_number(obj_air) < 50) {
 			
@@ -60,10 +79,24 @@ if(global.death) {
 			
 					if(anxiety_time_count >= room_speed * 5) { 
 						obj_player.state = player_states.reviving;
+						audio_pitch_variation(snd_buildup, 50, false, .75, .9, .9);
 						global.revive_times--;
 						breathe_time = false;
 					}
 				}
+				
+				
+				if(anxiety_level > .4) { 
+					anxiety_defeat_count++;	
+					if(anxiety_defeat_count >= room_speed * 25) { 
+						breathe_time = false;
+						shake(12, .1);
+						audio_pitch_variation(snd_defeat, 1, false, .5);
+						global.revive_times = 0;
+					}
+				}
+				
+				
 				with(obj_air) { 
 					//var scale_destiny = 1;
 		
@@ -79,9 +112,20 @@ if(global.death) {
 						my_vspeed = lerp(my_vspeed, .4 * size, .1);	
 						yscale_destiny = 1;	
 					}
+					
 					xscale_destiny = 2 - temp_yscale_destiny;
 		
 				}
+				
+				
+				if(mouse_check_button(mb_left)) {
+					main_vspeed_prop = lerp(main_vspeed_prop, 1, .3);
+				}
+				else { 
+					main_vspeed_prop = lerp(main_vspeed_prop, 0, .3);
+				}
+				
+				wind_volume = abs(main_vspeed_prop)/1;
 	
 	
 				var touch = mouse_check_button(mb_left);
@@ -89,6 +133,7 @@ if(global.death) {
 	
 				feather_vspeed += feather_gravity;
 	
+
 	
 				feather_vspeed = clamp(feather_vspeed, -.8, .7);
 	
@@ -140,10 +185,15 @@ if(global.death) {
 	}
 	else { 
 		breathe_scale = lerp(breathe_scale, 0, .2);	
+		if(audio_is_playing(wind_audio)) {
+			audio_sound_gain(wind_audio, breathe_scale, 0);	
+		}	
+		
 		
 		if(breathe_scale <= .01) { 
 			reset_breathe();	
 			instance_destroy(obj_air);
+			audio_stop_sound(wind_audio);
 		}
 	}
 	
@@ -220,7 +270,7 @@ if(global.stats.life <= 0) {
 	obj_player.image_index = 0;
 	shake(10, .1);
 	obj_player.state = player_states.defeat;
-	audio_pitch_variation(snd_defeat, 1, false, .5);
+	if(global.revive_times <= 0) audio_pitch_variation(snd_defeat, 1, false, .5);
 }
 
 //if(victory) { 

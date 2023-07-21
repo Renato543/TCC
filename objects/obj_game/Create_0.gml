@@ -38,8 +38,15 @@ function reset_breathe() {
 	anxiety_level = 1;
 	anxiety_shake = 2;
 	anxiety_time_count = 0;
-
+	anxiety_defeat_count = 0;
+	main_vspeed_prop = 0;
+	
+	heart_beat_time = .5;
+	heart_beat_count = 0;
 }
+
+wind_audio = noone;
+wind_volume = 0;
 
 reset_breathe();
 

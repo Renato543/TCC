@@ -109,7 +109,7 @@ switch(state) {
 	
 	case player_states.reviving:
 		sprite_index = skins.defeat;
-		reviving_load += .01;
+		reviving_load += .008;
 		
 		player_shake = reviving_load * 2;
 		
@@ -118,6 +118,7 @@ switch(state) {
 			global.death = false;
 			reviving_load = 0;
 			player_shake = 0;
+			audio_pitch_variation(snd_player_impact, 50, false);
 			state = player_states.idle;
 			shake(15, .1);
 			var med = instance_create_depth(x, y, depth, obj_meditation);
