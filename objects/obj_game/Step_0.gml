@@ -19,7 +19,7 @@ if(global.death) {
 			if(feather_start) {
 				if(!audio_is_playing(wind_audio)) wind_audio = audio_pitch_variation(snd_wind, 1, true, 0, .7, .7);
 				else { 
-					show_debug_message(wind_volume);
+				
 					audio_sound_gain(wind_audio, wind_volume * .5, 0);	
 					audio_sound_pitch(wind_audio, wind_volume * .8);	
 				}				
