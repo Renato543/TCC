@@ -18,7 +18,7 @@
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":100,"effectEnabled":true,"effectType":"_filter_gradient","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[
         {"name":"g_GradientColour1","type":1,"value":"#000000FF",},
-        {"name":"g_GradientColour2","type":1,"value":"#5CFF1139",},
+        {"name":"g_GradientColour2","type":1,"value":"#5CB20B27",},
         {"name":"g_GradientPosition1","type":0,"value":"0.5",},
         {"name":"g_GradientPosition1","type":0,"value":"-0.025",},
         {"name":"g_GradientPosition2","type":0,"value":"0.55",},

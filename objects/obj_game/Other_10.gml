@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-super_horde = true;
+super_horde = false;
 
 
 enemy_spawner_count = 0;
@@ -55,21 +55,64 @@ function minute_enemy() {
 	}
 	else if(is_between(all_seconds, 3, 4, true)) { 
 		phase = 4;
-		enemy_spawner_time = max(enemy_spawner_time, 0);
-		enemy_list = [obj_enemy2];
+		enemy_spawner_time = max(enemy_spawner_time, 5);
+		enemy_list = [obj_enemy];
 		enemy_chance = [100];
-
 	}
-	else if(is_between(all_seconds, 4, 30, true)) { 
+	else if(is_between(all_seconds, 4, 5, true)) { 
 		phase = 5;
-		enemy_spawner_time = max(enemy_spawner_time, 20);
+		enemy_spawner_time = max(enemy_spawner_time, 60);
+		enemy_list = [obj_enemy2, obj_enemy3];
+		enemy_chance = [40, 60];
+	}
+	else if(is_between(all_seconds, 5, 7, true)) { 
+		phase = 6;
+		enemy_spawner_time = max(enemy_spawner_time, 40);
+		enemy_list = [obj_enemy3, obj_enemy2];
+		enemy_chance = [90, 10];
+	}
+	else if(is_between(all_seconds, 7, 8, true)) { 
+		phase = 7;
+		enemy_spawner_time = max(enemy_spawner_time, 5);
 		enemy_list = [obj_enemy2];
 		enemy_chance = [100];
-
 	}
-	
-	
-	
+	else if(is_between(all_seconds, 8, 9, true)) { 
+		phase = 8;
+		enemy_spawner_time = max(enemy_spawner_time, 60);
+		enemy_list = [obj_enemy3, obj_enemy4];
+		enemy_chance = [50, 50];
+	}
+	else if(is_between(all_seconds, 9, 10, true)) { 
+		phase = 9;
+		enemy_spawner_time = max(enemy_spawner_time, 40);
+		enemy_list = [obj_enemy4];
+		enemy_chance = [100];
+	}
+	else if(is_between(all_seconds, 10, 11, true)) { 
+		phase = 10;
+		enemy_spawner_time = max(enemy_spawner_time, 60);
+		enemy_list = [obj_enemy5, obj_enemy6];
+		enemy_chance = [90, 10];
+	}
+	else if(is_between(all_seconds, 11, 12, true)) { 
+		phase = 11;
+		enemy_spawner_time = max(enemy_spawner_time, 60);
+		enemy_list = [obj_enemy6];
+		enemy_chance = [100];
+	}
+	else if(is_between(all_seconds, 12, 14, true)) { 
+		phase = 12;
+		enemy_spawner_time = max(enemy_spawner_time, 20);
+		enemy_list = [obj_enemy, obj_enemy2, obj_enemy3, obj_enemy4, obj_enemy5, obj_enemy6];
+		enemy_chance = [16, 16, 16, 16, 16, 16];
+	}
+	else if(is_between(all_seconds, 14, 15, true)) { 
+		phase = 13;
+		enemy_spawner_time = max(enemy_spawner_time, 0);
+		enemy_list = [obj_enemy7];
+		enemy_chance = [100];
+	}
 	
 	enemy_spawner_time -= decrease_vel;	
 	
@@ -78,9 +121,9 @@ function minute_enemy() {
 		active_spawner = true; 
 		
 		switch(phase) { 
-			case 4:
-				enemy_spawner_time_initial = 0;
-			break;
+			case 4: enemy_spawner_time_initial = 0; break;
+			case 7: enemy_spawner_time_initial = 0; break;
+			case 13: enemy_spawner_time_initial = 0; break;
 			
 		}
 		

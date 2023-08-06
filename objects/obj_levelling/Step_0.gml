@@ -8,7 +8,7 @@ if(!chose) {
 	for(var i = 0; i < array_length(button_xscale); i++) { 
 		button_xscale[i] = lerp(button_xscale[i], 1, .1);
 		button_yscale[i] = lerp(button_yscale[i], 1, .1);
-		button_yy[i] = lerp(button_yy[i], (camera_get_view_height(view_camera[0])/2) + 10, .2);	
+		button_yy[i] = lerp(button_yy[i], display_get_gui_height()/2, .2);	
 	}	
 }
 
@@ -75,11 +75,15 @@ if(able) {
 			
 			var cam_x = camera_get_view_x(view_camera[0]);
 			var cam_y = camera_get_view_y(view_camera[0]);
-			var x1 = cam_x + ((i + 1) * 110) - sprite_get_width(spr_level_up_card)/2;
-			var y1 = cam_y + button_yy[i] - sprite_get_height(spr_level_up_card)/2;
-			var x2 = cam_x + ((i + 1) * 110) + sprite_get_width(spr_level_up_card)/2;
-			var y2 = cam_y + button_yy[i] + sprite_get_height(spr_level_up_card)/2;
-			
+			var cam_ww = camera_get_view_width(view_camera[0]);
+			var cam_hh = camera_get_view_height(view_camera[0]);
+			var xx_percent = [.25, .5, .75];
+			var main_xx = cam_ww * xx_percent[i];
+			var main_yy = cam_hh/2;
+			var x1 = cam_x + main_xx - sprite_get_width(spr_level_up_card)/4 - 10;
+			var y1 = cam_y + main_yy - sprite_get_height(spr_level_up_card)/4 - 10;
+			var x2 = cam_x + main_xx + sprite_get_width(spr_level_up_card)/4 + 10;
+			var y2 = cam_y + main_yy + sprite_get_height(spr_level_up_card)/4 + 10;
 			
 			var check_mouse = point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2);
 			if(check_mouse) {

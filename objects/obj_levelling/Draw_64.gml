@@ -3,8 +3,11 @@
 part_system_drawit(ps);
 for(var i = 0; i < array_length(upgrades_id); i++ ) {
 	
-	var main_xx = (i + 1) * 110;
+	var display_xx = display_get_gui_width();
+	var xx_percent = [.25, .5, .75];
+	var main_xx = display_xx * xx_percent[i]
 	draw_sprite_ext(spr_level_up_card, 0, main_xx, button_yy[i], button_xscale[i], button_yscale[i], 0, c_white, 1); 
+	
 
 
 	//draw_set_config(global.font);
@@ -49,11 +52,6 @@ for(var i = 0; i < array_length(upgrades_id); i++ ) {
 	if(!buff_upgrade) draw_text_transformed(main_xx, button_yy[i], level_text, button_xscale[i], button_yscale[i], 0);
 	draw_set_color(c_white);
 	draw_reset_config();	
-	
-	
-	
-	
-	
 	
 	if(i == selected_id && !leave_select) { 
 	}

@@ -1,8 +1,8 @@
 window_set_cursor(cr_none);
 
 xp_per_orb = 10;
-xp = 0;
-show_mouse = false;
+xp = 50;
+show_mouse = true;
 
 need_xp = 50;
 active_spawner = true;
@@ -11,7 +11,7 @@ global.chance_to_drop_xp = 75;
 //Player stats
 
 global.stats = { 
-	life: 10,
+	life: 100,
 	life_max: 100,
 	spd: 1
 }
