@@ -1,0 +1,20 @@
+ww = sprite_get_width(sprite_index);
+hh = sprite_get_height(sprite_index);
+xx = camera_get_view_x(view_camera[0]);
+yy = camera_get_view_y(view_camera[0]);
+fric = 0;
+storage_speed = 0;
+scale_mode = false;
+scale_speed = .05;
+velh = 0;
+velv = 0;
+momentum_part = false;
+gravity_str = 0;
+depth_sorting = true;
+light_alp = 0;
+out_cam = false;
+color = 0;
+hue = 0;
+boss = false;
+
+my_surf = noone;

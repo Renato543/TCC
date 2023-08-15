@@ -1,0 +1,19 @@
+initial_x_move = device_mouse_x_to_gui(0);
+initial_y_move = device_mouse_y_to_gui(0);
+initial_x_aim = device_mouse_x_to_gui(0);
+initial_y_aim = device_mouse_y_to_gui(0);
+circle_area = 30;
+global.moving = false;
+global.touch_dist_move = 0;
+global.touch_dir_move = 0;
+global.touch_dist_aim = 0;
+global.touch_dir_aim = 0;
+my_surf = noone;
+deadzone_movement = 40/100;
+deadzone_aim = 50/100;
+
+check_move = false;
+check_aim = false;
+move_device = 0;
+aim_device = 1;
+device_count = 0;
