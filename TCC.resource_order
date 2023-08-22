@@ -35,6 +35,7 @@
     {"name":"Visual","order":2,"path":"folders/Objects/Controllers/Visual.yy",},
     {"name":"Enemy","order":7,"path":"folders/Objects/Enemy.yy",},
     {"name":"Normal Enemies","order":1,"path":"folders/Objects/Enemy/Normal Enemies.yy",},
+    {"name":"GUI","order":11,"path":"folders/Objects/GUI.yy",},
     {"name":"Items","order":9,"path":"folders/Objects/Items.yy",},
     {"name":"Candy","order":2,"path":"folders/Objects/Items/Candy.yy",},
     {"name":"Friends","order":6,"path":"folders/Objects/Items/Friends.yy",},

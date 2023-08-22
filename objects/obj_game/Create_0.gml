@@ -1,7 +1,7 @@
 window_set_cursor(cr_none);
 
 xp_per_orb = 10;
-xp = 50;
+xp = 0;
 show_mouse = true;
 
 need_xp = 50;

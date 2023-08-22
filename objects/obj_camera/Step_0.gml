@@ -10,8 +10,6 @@ camera_set_view_size(view_camera[0], ww_final, hh_final);
 var ww = camera_get_view_width(view_camera[0]);
 var hh = camera_get_view_height(view_camera[0]);
 
-show_debug_message(ww);
-
 var x_destiny = obj_player.x;
 var y_destiny = obj_player.y;
 

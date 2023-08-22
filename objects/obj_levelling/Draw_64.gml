@@ -8,7 +8,8 @@ for(var i = 0; i < array_length(upgrades_id); i++ ) {
 	var main_xx = display_xx * xx_percent[i]
 	draw_sprite_ext(spr_level_up_card, 0, main_xx, button_yy[i], button_xscale[i], button_yscale[i], 0, c_white, 1); 
 	
-
+	
+	
 
 	//draw_set_config(global.font);
 	//var multiplier = i mod 2 == 1 ? 1: -1;
@@ -31,6 +32,12 @@ for(var i = 0; i < array_length(upgrades_id); i++ ) {
 		}
 	}
 	
+	if(level <= 0) {
+		draw_set_config(global.font);
+		var _desc = global.items_desc_pt[upgrades_id[i]];
+		draw_text_ext_transformed(main_xx, button_yy[i] + 10, _desc, string_height(_desc), sprite_get_width(spr_level_up_card) - 5, button_xscale[i], button_yscale[i], 0);
+		draw_reset_config();
+	}
 	
 	
 	var spr_index = spr_items_portrait;
@@ -41,7 +48,11 @@ for(var i = 0; i < array_length(upgrades_id); i++ ) {
 	draw_set_config(global.font);
 	var color = c_white;
 	var angle2 = 0;
-	if(level >= 1) var level_text = global.language == 0 ? "nvl." + string(level + 1): "lvl." + string(level + 1);
+	var yy = button_yy[i] + sprite_get_height(spr_level_up_card)/2 - 5;
+	if(level >= 1) {
+		yy = button_yy[i];
+		var level_text = global.language == 0 ? "nvl." + string(level + 1): "lvl." + string(level + 1);
+	}
 	else {
 		var level_text = global.language == 0 ? "novo": "new";
 		var hue = 125 + sin(global.current_time * .001) * 125;
@@ -49,7 +60,7 @@ for(var i = 0; i < array_length(upgrades_id); i++ ) {
 		angle2 = sin(global.current_time * .01) * 2;
 	}
 	draw_set_color(color);
-	if(!buff_upgrade) draw_text_transformed(main_xx, button_yy[i], level_text, button_xscale[i], button_yscale[i], 0);
+	if(!buff_upgrade) draw_text_transformed(main_xx, yy, level_text, button_xscale[i], button_yscale[i], 0);
 	draw_set_color(c_white);
 	draw_reset_config();	
 	

@@ -46,6 +46,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Visual","folderPath":"folders/Objects/Controllers/Visual.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemy","folderPath":"folders/Objects/Enemy.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Normal Enemies","folderPath":"folders/Objects/Enemy/Normal Enemies.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"GUI","folderPath":"folders/Objects/GUI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Items","folderPath":"folders/Objects/Items.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Candy","folderPath":"folders/Objects/Items/Candy.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Friends","folderPath":"folders/Objects/Items/Friends.yy",},
@@ -94,7 +95,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.6.0.89",
+    "IDEVersion": "2023.4.0.84",
   },
   "resources": [
     {"id":{"name":"__spr_ppf_debug_icon","path":"sprites/__spr_ppf_debug_icon/__spr_ppf_debug_icon.yy",},},
@@ -234,6 +235,7 @@
     {"id":{"name":"__ppf_settings","path":"scripts/__ppf_settings/__ppf_settings.yy",},},
     {"id":{"name":"__spr_ppf_noise_perlin","path":"sprites/__spr_ppf_noise_perlin/__spr_ppf_noise_perlin.yy",},},
     {"id":{"name":"__spr_ppf_prism_lut_rb","path":"sprites/__spr_ppf_prism_lut_rb/__spr_ppf_prism_lut_rb.yy",},},
+    {"id":{"name":"obj_dialog_box","path":"objects/obj_dialog_box/obj_dialog_box.yy",},},
     {"id":{"name":"snd_player_impact","path":"sounds/snd_player_impact/snd_player_impact.yy",},},
     {"id":{"name":"spr_level_up_card","path":"sprites/spr_level_up_card/spr_level_up_card.yy",},},
     {"id":{"name":"__spr_ppf_pal_gameboy","path":"sprites/__spr_ppf_pal_gameboy/__spr_ppf_pal_gameboy.yy",},},
